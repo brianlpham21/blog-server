@@ -12,7 +12,6 @@ const passport = require('passport');
 // const { james: jimmy, robert: bobby } = actorSurnames;
 // console.log(jimmy); // Stewart - the variable name is jimmy, not james
 // console.log(bobby); // De Niro - the variable name is bobby, not robert
-
 const { router: usersRouter } = require('./users');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 
