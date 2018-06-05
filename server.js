@@ -58,15 +58,15 @@ app.use('*', (req, res) => {
 // closeServer assumes runServer has run and set `server` to a server object
 let server;
 
-function runServer(databaseUrl, port = PORT) {
+function runServer() {
 
   return new Promise((resolve, reject) => {
-    mongoose.connect(databaseUrl, err => {
+    mongoose.connect(DATABASE_URL, {useMongoClient:true}, err => {
       if (err) {
         return reject(err);
       }
-      server = app.listen(port, () => {
-        console.log(`Your app is listening on port ${port}`);
+      server = app.listen(PORT, () => {
+        console.log(`Your app is listening on port ${PORT}`);
         resolve();
       })
         .on('error', err => {
@@ -92,7 +92,7 @@ function closeServer() {
 }
 
 if (require.main === module) {
-  runServer(DATABASE_URL).catch(err => console.error(err));
+  runServer().catch(err => console.error(err));
 }
 
 module.exports = { app, runServer, closeServer };
