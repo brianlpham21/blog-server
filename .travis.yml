@@ -1,0 +1,11 @@
+language: node_js
+node_js: node
+services:
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: XqpuKtxrfh+qT7kKEu3aWh+Tn/eXX8Ow9n+KZlDifS9MXKaVxVSw1ZkKcyxBiCDhZQFnolR/mDxw/t1S9wr7HDAorxe1o7x8rZKVqomA0CY3gXeuFc6aSu0t6YBJgLhOOWpfaNy9E02fYp+2CIphJ5pSIIKnEA2tssUDtspLAjWW9meHKrVU312CT8I21/YkzSf4m0LcMis017uWlKNP3xam4rWfb6mWU+8peE59yi6CNSY/fLm8zyQYxxXb5TGKm8hoxJjQ/JmyXwAPjM0eXdYdLOjM/n+nqCHaAggGH8X7dlIjOVfcNJMV4E9IRMIm5J2YVB78uGIqcOf6yiTY0DtBfMu3vXblahO9ssZv0KNklkjwmZFJ4ltpp1yLqHtSx8bC8SP8CFnEI9xM56cPrCp/9gO80OA8yl+u1KP7zN2oU57JAj9Ka8Dk7LY7kdnbz1aOfMniunQQEh+JmtOaJwoMME9SXOxxq+Bn8pMr8RgTxW8Xs5YdrKF2ln4nM7C7sHEyWn7ssEXYZS/JI2tkN5DDOXX7q5hVKTN7gWOSXsyXBmjMP8Bv9V6LUIKLUaljQkfdXAQrHi9F1P6Znh4Gs+gF5cX6ww61yjDYpteXyOREzSf+kt5aF5OWZxlr242bcQuueeFrE/dlD/mH8ofPlT3XcJ11Z5bWR4RwOmJ+DdA=
+  app: mighty-sierra-45915
+  on:
+    repo: brianlpham21/blog-server
