@@ -9,6 +9,10 @@ const PostSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  titleSubtext: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
     required: true
@@ -26,6 +30,7 @@ PostSchema.methods.serialize = function() {
   return {
     id: this._id || '',
     title: this.title || '',
+    titleSubtext: this.titleSubtext || '',
     date: this.date || '',
     category: this.category || '',
     photoLink: this.photoLink || '',

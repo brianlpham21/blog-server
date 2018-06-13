@@ -36,6 +36,7 @@ router.post('/', jsonParser, (req, res) => {
   Post
     .create({
       title: req.body.title,
+      titleSubtext: req.body.titleSubtext,
       date: Date.now(),
       category: req.body.category,
       photoLink: req.body.photoLink,
@@ -55,6 +56,7 @@ router.patch('/:id', jsonParser, (req, res) => {
   Post
     .findByIdAndUpdate(req.params.id, {$set: {
       'title': req.body.title,
+      'titleSubtext': req.body.titleSubtext,
       'category': req.body.category,
       'photoLink': req.body.photoLink,
       'photoCaption': req.body.photoCaption,
