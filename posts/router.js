@@ -30,6 +30,38 @@ router.get('/:id', (req, res) => {
   );
 });
 
+// Get Category Posts
+
+router.get('/category/travel', (req, res) => {
+  Post
+    .find()
+    .sort({'date': -1})
+    .then(posts => posts.filter(post => post.category === 'Travel'))
+    .then(posts => res.json(posts.map(post => post.serialize())))
+    .catch(err => res.status(500).json({message: 'Internal Server Error'})
+  );
+});
+
+router.get('/category/experiences', (req, res) => {
+  Post
+    .find()
+    .sort({'date': -1})
+    .then(posts => posts.filter(post => post.category === 'Experiences'))
+    .then(posts => res.json(posts.map(post => post.serialize())))
+    .catch(err => res.status(500).json({message: 'Internal Server Error'})
+  );
+});
+
+router.get('/category/tech', (req, res) => {
+  Post
+    .find()
+    .sort({'date': -1})
+    .then(posts => posts.filter(post => post.category === 'Tech'))
+    .then(posts => res.json(posts.map(post => post.serialize())))
+    .catch(err => res.status(500).json({message: 'Internal Server Error'})
+  );
+});
+
 // Create a New Post
 
 router.post('/', jsonParser, (req, res) => {
